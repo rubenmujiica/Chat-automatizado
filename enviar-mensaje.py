@@ -33,7 +33,7 @@ def whatsapp():
         msg.body('Perfecto. ¿Tienes experiencia previa en este puesto? (Sí/No)')
     elif isinstance(user_state[from_number], dict) and user_state[from_number]['next'] == 'ask_experience':
         # Manejar posibles respuestas erróneas
-        if incoming_msg.lower() not in ['sí', 'no', 'si', 'Si', 'No']:
+        if incoming_msg.lower() not in ['sí', 'no', 'si', 'Si', 'Sí', 'No']:
             msg.body('Por favor, responde con "Sí" o "No". ¿Tienes experiencia previa en este puesto? (Sí/No)')
         else:
             user_state[from_number]['experience'] = incoming_msg
